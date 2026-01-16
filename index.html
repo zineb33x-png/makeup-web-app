@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maison de Beauté | L'Excellence du Maquillage</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="components.css">
+    <link rel="stylesheet" href="landing.css">
+    <!-- Ionicons -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+
+<body>
+
+    <!-- Navbar (Transparent) -->
+    <header class="app-header transparent" style="position: absolute; width: 100%;">
+        <div class="container header-content">
+            <div class="brand">
+                <ion-icon name="diamond-outline" class="brand-logo"></ion-icon>
+                <span class="brand-name">Maison de Beauté</span>
+            </div>
+            <nav class="footer-links" style="margin-bottom: 0; align-items: center;">
+                <a href="#collections" class="footer-link" style="color: white">Collections</a>
+
+                <!-- Cart Trigger -->
+                <button id="cartBtn" class="btn btn-icon" style="color: white; position: relative; margin-right: 1rem;">
+                    <ion-icon name="bag-outline" style="font-size: 1.5rem;"></ion-icon>
+                    <span id="cartBadge"
+                        style="position: absolute; top: 0; right: 0; background: var(--color-gold); color: black; font-size: 0.7rem; width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold;">0</span>
+                </button>
+
+                <a href="admin.html" class="btn btn-primary"
+                    style="background: white; color: black; border: none; font-size: 0.8rem; padding: 0.5rem 1rem;">
+                    Espace Privé
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title">Révélez Votre Éclat Naturel</h1>
+            <p class="hero-subtitle">Une collection exclusive de produits de beauté haute couture.</p>
+            <a href="#collections" class="btn btn-primary"
+                style="background: var(--color-gold); border-color: var(--color-gold); color: white; font-size: 1.1rem; padding: 1rem 2.5rem;">
+                Découvrir la Collection
+            </a>
+        </div>
+    </section>
+
+    <!-- Featured Collection -->
+    <section id="collections" class="featured-collection container">
+        <div class="section-header" style="justify-content: center; text-align: center; display: block;">
+            <p class="section-subtitle">Nos Best-Sellers</p>
+            <h2 class="section-title">La Collection Or</h2>
+        </div>
+
+        <!-- Dynamic Product Grid -->
+        <div id="productGrid" class="product-grid">
+            <!-- Products injected by JS -->
+            <div style="text-align: center; width: 100%; grid-column: 1/-1; padding: 2rem;">
+                Chargement de la collection...
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section container">
+        <img src="https://files.idyllic.app/files/static/16064" alt="About" class="about-image">
+        <div class="about-content">
+            <h2 class="section-title">L'Art de la Beauté</h2>
+            <p style="margin-top: 2rem; color: var(--color-text-muted); font-size: 1.1rem;">
+                Depuis 1920, Maison de Beauté incarne l'élégance à la française.
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <p style="color: var(--color-text-muted); font-size: 0.9rem;">&copy; 2026 Maison de Beauté.</p>
+        </div>
+    </footer>
+
+    <!-- Cart Modal -->
+    <!-- Removed inline styles and added cart-overlay and cart-sidebar classes -->
+    <div id="cartModal" class="modal-overlay cart-overlay">
+        <div class="modal-content cart-sidebar">
+            <div class="modal-header">
+                <h2>Votre Panier</h2>
+                <button id="closeCartBtn" class="btn-icon">
+                    <ion-icon name="close-outline"></ion-icon>
+                </button>
+            </div>
+
+            <div id="cartItems" style="flex: 1; overflow-y: auto; padding-right: 0.5rem;">
+                <!-- Items injected here -->
+            </div>
+
+            <div style="border-top: 1px solid #eee; padding-top: 1rem; margin-top: 1rem;">
+                <div
+                    style="display: flex; justify-content: space-between; font-size: 1.2rem; font-weight: bold; margin-bottom: 1rem;">
+                    <span>Total</span>
+                    <span id="cartTotal">0,00 €</span>
+                </div>
+                <button id="checkoutBtn" class="btn btn-primary" style="width: 100%;">Commander</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="utils.js"></script>
+    <script src="api.js"></script>
+    <script src="client.js"></script>
+</body>
+
+</html>

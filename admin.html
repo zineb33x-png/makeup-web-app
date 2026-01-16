@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maison de Beauté | Administration</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="components.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+
+<body>
+
+    <header class="app-header">
+        <div class="container header-content">
+            <div class="brand">
+                <ion-icon name="diamond-outline" class="brand-logo"></ion-icon>
+                <span class="brand-name">Maison de Beauté</span>
+                <span class="badge badge-gold" style="margin-left: 1rem;">Admin</span>
+            </div>
+            <nav>
+                <a href="index.html" class="btn btn-secondary">
+                    Retour au Site
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content container">
+        <div class="section-header">
+            <div>
+                <h1 class="section-title">Catalogue Produits</h1>
+                <p class="section-subtitle">Gérez votre offre exclusive</p>
+            </div>
+            <button id="addClientBtn" class="btn btn-primary">
+                <ion-icon name="add-outline"></ion-icon>
+                Nouveau Produit
+            </button>
+        </div>
+
+        <div id="clientsGrid" class="client-grid">
+            <!-- Products injected here -->
+        </div>
+    </main>
+
+    <!-- Generic Modal for Product -->
+    <div id="clientModal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Nouveau Produit</h2>
+                <button class="btn-icon close-modal">
+                    <ion-icon name="close-outline"></ion-icon>
+                </button>
+            </div>
+            <form id="clientForm">
+                <div class="form-group">
+                    <label class="form-label">Nom du Produit</label>
+                    <input type="text" id="productName" class="form-input" required placeholder="Ex: Élixir Précieux">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Prix (€)</label>
+                    <input type="number" step="0.01" id="productPrice" class="form-input" required placeholder="0.00">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Catégorie</label>
+                    <select id="productCategory" class="form-select">
+                        <option value="Soin">Soin Visage</option>
+                        <option value="Yeux">Yeux</option>
+                        <option value="Lèvres">Lèvres</option>
+                        <option value="Teint">Teint</option>
+                        <option value="Parfum">Parfum</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">URL de l'image</label>
+                    <input type="url" id="productImage" class="form-input" required placeholder="https://...">
+                </div>
+                <div style="text-align: right; margin-top: 2rem;">
+                    <button type="button" class="btn btn-secondary close-modal"
+                        style="margin-right: 0.5rem">Annuler</button>
+                    <button type="submit" class="btn btn-primary">Enregistrer</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="utils.js"></script>
+    <script src="api.js"></script>
+    <script src="admin.js"></script>
+</body>
+
+</html>
